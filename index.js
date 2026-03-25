@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const { formidable } = require('formidable');
 const axios = require('axios');
@@ -8,11 +9,11 @@ const config = require('./config');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const GITHUB_TOKEN="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";
-const GITHUB_USER="mydatabaseku";
-const CDN_REPO="https://github.com/mydatabaseku/1";
-const GIST_ID="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";
-const APP_DOMAIN="http://localhost:3000":
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_USER = process.env.GITHUB_USER;
+const CDN_REPO = process.env.CDN_REPO;
+const GIST_ID = process.env.GIST_ID;
+const APP_DOMAIN = process.env.APP_DOMAIN;
 
 const githubApi = axios.create({
   baseURL: 'https://api.github.com',
